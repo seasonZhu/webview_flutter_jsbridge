@@ -104,6 +104,6 @@ class HomeView extends StatelessWidget {
 
   Future<Object?> _defaultHandler(Object? data) async {
     await Future.delayed(Duration(seconds: 1), () {});
-    return '_defaultHandler res from native';
+    return '_defaultHandler response from native';
   }
 }
