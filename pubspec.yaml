@@ -1,6 +1,7 @@
 name: webview_flutter_jsbridge
 description: 'A flutter jsbridge package compatible with webview_flutter 4.0.0, dependent on inject javascript.'
 version: 0.1.0
+homepage: 'https://github.com/seasonZhu/webview_flutter_jsbridge'
 environment:
   sdk: '>=3.0.6 <4.0.0'
   flutter: '>=3.0.0'
