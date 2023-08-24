@@ -35,12 +35,12 @@ class HomeView extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Flutter WebView JSBridge"),
+        title: Text('Flutter WebView JSBridge'),
         actions: [
           TextButton(
             onPressed: _callJS,
             child: Text(
-              "callJS",
+              'callJS',
               style: TextStyle(color: Colors.white),
             ),
           ),
@@ -68,7 +68,7 @@ class HomeView extends StatelessWidget {
 
     jsBridge.webViewController = webController;
     jsBridge.defaultHandler = _defaultHandler;
-    jsBridge.registerHandler("testFlutterCallback", _nativeHandler);
+    jsBridge.registerHandler('testFlutterCallback', _nativeHandler);
 
     webController
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
@@ -81,7 +81,7 @@ class HomeView extends StatelessWidget {
           },
         ),
       )
-      ..loadFlutterAsset("assets/example.html");
+      ..loadFlutterAsset('assets/example.html');
 
     if (webController.platform is AndroidWebViewController) {
       AndroidWebViewController.enableDebugging(true);
