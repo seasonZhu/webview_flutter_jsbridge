@@ -2,15 +2,28 @@
 
 A flutter jsbridge package compatible with [webview_flutter](https://github.com/flutter/plugins/tree/master/packages/webview_flutter/webview_flutter) 4.0.0, dependent on inject javascript.
 
-This package is based on [webview_jsbridge](https://github.com/KouYiGuo/webview_jsbridge), because of webview_jsbridge is too old that can't compatible with newest webview_flutter, so I fix and delete some code.
+This package is based on [webview_jsbridge](https://pub-web.flutter-io.cn/packages/webview_jsbridge), because of webview_jsbridge is too old that can't compatible with newest webview_flutter, so I fix and delete some code.
 
 I'm an iOSer, so most js code and JSBridge code is based on [WebViewJavascriptBridge](https://github.com/marcuswestin/WebViewJavascriptBridge). You can see they are very similar.
 
-I also test on Android Device, it's OK.
+I also test on Android device, it's OK.
 
 ## Usage
 
+### Flutter implementation
+
+home_view.dart
+
 ```dart
+import 'dart:async';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+import 'package:webview_flutter_android/webview_flutter_android.dart';
+import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
+import 'package:webview_flutter_jsbridge/webview_flutter_jsbridge.dart';
+
 class HomeView extends StatelessWidget {
   final jsBridge = JSBridge();
 
@@ -96,7 +109,7 @@ class HomeView extends StatelessWidget {
 }
 ```
 
-### example.html implementation
+### HTML implementation
 
 example.html
 
@@ -203,3 +216,6 @@ example.html
   </body>
 </html>
 ```
+### Attention
+
+This package has used the javaScriptChannel `WebviewFlutterJSBridgeChannel`, so when add other javaScriptChannel, don't use it again.
